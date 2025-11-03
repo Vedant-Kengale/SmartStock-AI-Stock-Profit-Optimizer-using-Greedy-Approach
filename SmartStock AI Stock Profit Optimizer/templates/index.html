@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartStock - AI Stock Profit Optimizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background: linear-gradient(90deg, #0d1b2a, #1b263b);">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-info" href="#">SmartStock</a>
+        <span class="navbar-text text-light small">AI Stock Profit Optimizer</span>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card glass-card h-100">
+            <div class="card-body">
+              <h5 class="card-title text-info">📊 Input Prices</h5>
+              <p class="text-muted small mb-2">Enter daily closing prices, comma separated</p>
+              <textarea id="priceInput" class="form-control shadow-sm" rows="4" placeholder="e.g. 100,180,260,310,40,535,695"></textarea>
+
+              <div class="d-flex gap-2 mt-3 flex-wrap">
+                <button id="analyzeBtn" class="btn btn-info fw-semibold shadow-sm px-3">Analyze</button>
+                <button id="loadSample" class="btn btn-outline-info fw-semibold">Load Sample</button>
+                <button id="clearBtn" class="btn btn-outline-light fw-semibold">Clear</button>
+              </div>
+
+              <div id="loader" class="text-center my-3" style="display:none;">
+                <div class="spinner-border text-info" role="status" style="width:3rem; height:3rem;"></div>
+                <p class="mt-2 text-info small">AI analyzing trends...</p>
+              </div>
+
+              <hr class="bg-secondary mt-4" />
+              <h6 class="text-uppercase text-info">Results</h6>
+              <ul class="list-unstyled mb-2" id="resultsList">
+                <li>Predicted Next Price: <strong id="predPrice" class="text-success">-</strong></li>
+                <li>Maximum Profit: <strong id="maxProfit" class="text-success">-</strong></li>
+              </ul>
+              <div id="txArea" class="mt-2 text-light small"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card glass-card mb-3">
+            <div class="card-body">
+              <h5 class="card-title text-info">📈 Price Chart</h5>
+              <canvas id="priceChart" height="140"></canvas>
+            </div>
+          </div>
+
+          <div class="card bg-transparent border-info border-opacity-25 shadow-sm">
+            <div class="card-body">
+              <h6 class="text-info">💡 Notes</h6>
+              <p class="small text-white-50 mb-0">
+                Greedy algorithm identifies optimal buy-sell pairs.<br>
+                Linear Regression predicts the next price.<br>
+                This academic demo visualizes algorithmic trading insights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center text-muted py-3 small">
+      Made by Vedant Kengale, Aditya Bhoye, Jai Chandegave, Amit Mali
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

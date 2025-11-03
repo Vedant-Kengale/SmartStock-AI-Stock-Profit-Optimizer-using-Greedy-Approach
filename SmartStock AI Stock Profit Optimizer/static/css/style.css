@@ -1,0 +1,159 @@
+body {
+  font-family: 'Poppins', system-ui, Arial;
+  background: radial-gradient(circle at top, #0d1117, #000);
+  color: #e6eef8;
+  overflow-x: hidden;
+}
+
+/* --- Glassmorphic Card Style --- */
+.glass-card {
+  background: rgba(13, 17, 23, 0.92);
+  border: 1px solid rgba(0, 200, 255, 0.18);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.25);
+}
+
+/* --- Input Styling --- */
+textarea.form-control {
+  background: #071226;
+  color: #e6eef8;
+  border: 1px solid #132033;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+textarea.form-control:focus {
+  box-shadow: 0 0 10px rgba(0, 195, 255, 0.6);
+  border-color: #00b4ff;
+}
+
+/* --- Buttons --- */
+.btn {
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.btn-info {
+  background-color: #00b4ff;
+  border: none;
+  color: #fff;
+}
+
+.btn-info:hover {
+  background-color: #009fd9;
+}
+
+.btn-outline-info {
+  color: #00b4ff;
+  border-color: #00b4ff;
+}
+
+.btn-outline-info:hover {
+  background-color: #00b4ff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #00b4ff;
+  color: #fff;
+}
+
+/* --- Transactions Area --- */
+#txArea .list-group-item {
+  border: none;
+  color: #f8f9fa;
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+#txArea strong {
+  color: #39ff14;
+}
+
+/* --- Results Text Fix --- */
+#resultsList li {
+  color: #e6eef8; /* bright label text */
+  font-weight: 500;
+}
+
+#resultsList strong {
+  color: #00ff99; /* glowing green for numeric values */
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 255, 153, 0.4);
+}
+
+#resultsList li:hover strong {
+  text-shadow: 0 0 8px rgba(0, 255, 153, 0.8);
+}
+
+/* --- Loader Animation --- */
+#loader .spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loader p {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid rgba(0, 200, 255, 0.1);
+  color: #8fa5b5;
+  background: transparent;
+}
+
+/* --- Headings and Notes --- */
+h5, h6 {
+  font-weight: 600;
+}
+
+.text-muted {
+  color: #a6b3c3 !important;
+}
+
+.text-info {
+  color: #00c6ff !important;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 992px) {
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-card {
+    margin-top: 10px;
+  }
+  #priceChart {
+    height: 240px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  textarea.form-control {
+    font-size: 0.9rem;
+  }
+  #resultsList {
+    font-size: 0.85rem;
+  }
+}
